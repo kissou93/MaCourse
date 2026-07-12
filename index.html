@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="MaCourse — Application de courses en ligne, Cotonou Bénin">
+  <title>MaCourse</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/launcher.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       LAUNCHER
+       Point d'entrée de l'application.
+       Permet de choisir l'interface à ouvrir.
+  ════════════════════════════════════════════ -->
+  <main class="launcher">
+
+    <header class="launcher__header">
+      <h1 class="launcher__logo">Ma<span>Course</span></h1>
+      <p class="launcher__tagline">Application complète — Bénin 🇧🇯</p>
+    </header>
+
+    <nav class="launcher__nav" aria-label="Choisir une interface">
+      <!-- App Cliente -->
+      <button class="launcher__card" onclick="goTo('client')" aria-label="Ouvrir l'app cliente">
+        <span class="launcher__card-icon" aria-hidden="true">🛒</span>
+        <span class="badge badge--client">Client</span>
+        <span class="launcher__card-title">App Cliente</span>
+        <span class="launcher__card-desc">Commander ses courses, suivre sa livraison</span>
+      </button>
+
+      <!-- Interface Admin -->
+      <button class="launcher__card" onclick="goTo('admin')" aria-label="Ouvrir l'interface admin">
+        <span class="launcher__card-icon" aria-hidden="true">📊</span>
+        <span class="badge badge--admin">Admin</span>
+        <span class="launcher__card-title">Interface Admin</span>
+        <span class="launcher__card-desc">Dashboard, stocks, commandes, finances</span>
+      </button>
+
+      <!-- App Livreur -->
+      <button class="launcher__card" onclick="goTo('livreur')" aria-label="Ouvrir l'app livreur">
+        <span class="launcher__card-icon" aria-hidden="true">🛵</span>
+        <span class="badge badge--livreur">Livreur</span>
+        <span class="launcher__card-title">App Livreur</span>
+        <span class="launcher__card-desc">Missions, navigation, historique</span>
+      </button>
+    </nav>
+
+    <footer class="launcher__footer">
+      <p>3 interfaces reliées en temps réel via localStorage</p>
+      <p class="launcher__version">MVP v0.1 — Cotonou 2025</p>
+    </footer>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/db.js"></script>
+  <script>
+    // Initialise la base de données au premier chargement
+    initDB();
+  </script>
+
+</body>
+</html>
